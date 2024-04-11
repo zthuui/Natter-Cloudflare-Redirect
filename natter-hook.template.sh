@@ -1,19 +1,19 @@
 #!/bin/sh
-ZONE=''
-RULE=''
+ZONE='e1ce0f949c79108c63739316d9b968eb'
+RULE='d0efedf29f624bff9175b3a07ae271b5'
 # You can get Rulesets ID from your web dashboard, Try to add a rule in the dashboard, and then use F12 to view the request, and you will find the rulesets ID in the request URL.
-AUTH=''
+AUTH='8b40fc13fd9d3970da59872d21a773e608ace'
 # API token Permissions :Zone.Config Rules, Zone.Dynamic Redirect, Zone.Dynamic Redirect
-DOMAIN='example.com'
+DOMAIN='thui.top'
 ADDR=${4}
 PORT=${5}
 INNER_PORT=${3}
-DDNS_DOMAIN=''
+DDNS_DOMAIN='bbb.thui.top'
 # DDNS_DOMAIN = IP_ADDR DDNS to domain name or use IP Address only .
 # IF NO Domain to DDNS,  Please use DDNS_DOMAIN = ${ADDR}.
 JUMP='0'
-if [ ${INNER_PORT} == '1234' ]; then
-    PREFIX='www'
+if [ ${INNER_PORT} == '5000' ]; then
+    PREFIX='aaa'
         # IF inner port is 1234,actually domain is www.example.com
     curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/rulesets/${RULE}" \
     -H "Authorization: Bearer ${AUTH}" \
